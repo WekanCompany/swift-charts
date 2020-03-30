@@ -16,7 +16,6 @@ private struct ItemDef {
 }
 
 class ViewController: UIViewController {
-    
     @IBOutlet var tableView: UITableView!
     private var itemDefs = [ItemDef(title: "Line Chart",
                             subtitle: "A simple demonstration of the linechart.",
@@ -118,13 +117,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let def = self.itemDefs[indexPath.row]
-//
-//        let vcClass = def.class as! UIViewController.Type
-//        let vc = vcClass.init()
-//        
-//        self.navigationController?.pushViewController(vc, animated: true)
-//        tableView.deselectRow(at: indexPath, animated: true)
+        let def = self.itemDefs[indexPath.row]
+
+        let vcClass = def.class as! UIViewController.Type
+        let vc = vcClass.init()
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
